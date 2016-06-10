@@ -38,7 +38,8 @@ trait BaseScale[Datum,Range, T <: BaseScale[Datum,Range,T]] extends js.Function1
 trait BaseDom[Datum,T <: BaseDom[Datum,T]] extends js.Object {
 //  self: T =>
 
-  type DatumFunction[M]=js.Function3[Datum, Int, js.UndefOr[Int], M] | js.ThisFunction3[dom.EventTarget, Datum, Int, js.UndefOr[Int], M] 
+  type DatumFunction[M]=js.Function3[Datum, Int, js.UndefOr[Int], M]
+  type ThisDatumFunction[M]=js.ThisFunction3[dom.EventTarget, Datum, Int, js.UndefOr[Int], M]
   type SelfOrDatumFunction[M]=M | js.Function3[Datum, Int, Int, M]
 
   def attr(name: String, value: Primitive): T = js.native
@@ -467,6 +468,3 @@ trait Locale extends js.Object {
 
   var timeFormat: js.Any = js.native
 }
-
-
-
