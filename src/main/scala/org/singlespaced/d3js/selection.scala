@@ -44,6 +44,7 @@ trait BaseSelection[Datum, T <: BaseSelection[Datum,T]] extends BaseDom[Datum,T]
   def classed(obj: js.Dictionary[SelfOrDatumFunction[Boolean]]): T = js.native
 
   def style(name: String): String = js.native
+  def style(name: String, value: SelfOrDatumFunction[Primitive]): T = js.native
 
   def style(obj: js.Dictionary[SelfOrDatumFunction[Primitive]], priority: String ): T = js.native
 

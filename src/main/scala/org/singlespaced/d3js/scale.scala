@@ -11,7 +11,9 @@ trait ScaleObject extends js.Object {
 
   def identity(): Identity = js.native
 
-  def linear(): Linear[Double, Double] = js.native
+//  def linear(): Linear[Double, Double] = js.native
+
+  def linear[Range, Output](): Linear[Range, Output] = js.native
 
   //TODO def linear[Output](): Linear[Output, Output] = js.native
   //TODO def linear[Range, Output](): Linear[Range, Output] = js.native
@@ -63,13 +65,13 @@ trait Identity extends BaseScale[Double,Double,Identity]{
 }
 
 @js.native
-trait Linear[Range, Output] extends BaseScale[Double,Range,Linear[Range,Output]] {
+trait Linear[Range, Output] extends BaseScale[Range,Output,Linear[Range,Output]] {
 
   def rangeRound(values: js.Array[Double]): Linear[Double, Double] = js.native
 
-  def interpolate(): js.Function2[Range, Range, js.Function1[Double, Output]] = js.native
+  //def interpolate(): js.Function2[Range, Range, js.Function1[Double, Output]] = js.native
 
-  def interpolate(factory: js.Function2[Range, Range, js.Function1[Double, Output]]): Linear[Range, Output] = js.native
+  def interpolate(factory: js.Function2[Output, Output, js.Function1[Double, Output]]): Linear[Range, Output] = js.native
 
   def clamp(): Boolean = js.native
 

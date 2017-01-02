@@ -142,7 +142,7 @@ trait ScaleObject extends js.Object {
 
 @js.native
 trait Scale[Range, Output] extends BaseScale[Date,Range,Scale[Range, Output]] {
-  def apply(x: Date): Output = js.native
+  //def apply(x: Date): Output = js.native
 
   def nice(): Scale[Range, Output] = js.native
 

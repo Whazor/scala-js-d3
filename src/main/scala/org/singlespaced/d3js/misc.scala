@@ -22,7 +22,7 @@ trait TransitionObject extends js.Object {
 
 
 @js.native
-trait BaseScale[Datum,Range, T <: BaseScale[Datum,Range,T]] extends js.Function1[Double,Double] {
+trait BaseScale[Datum,Range, T <: BaseScale[Datum,Range,T]] extends js.Function1[Datum,Range] {
   def domain(): js.Array[Datum] = js.native
 
   def domain(values: js.Array[Datum]): T = js.native
@@ -31,7 +31,7 @@ trait BaseScale[Datum,Range, T <: BaseScale[Datum,Range,T]] extends js.Function1
 
   def range(values: js.Array[Range]): T = js.native
 
-  def range(): js.Array[Range] = js.native
+  //def range(): js.Array[Range] = js.native
 }
 
 @js.native
