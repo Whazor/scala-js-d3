@@ -44,9 +44,4 @@ pomExtra := (
     </developers>)
 
 publishMavenStyle := true
-
-releasePublishArtifactsAction := PgpKeys.publishSigned.value
-
-useGpg := true
-
 //bintray.Keys.repository := "maven"
